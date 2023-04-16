@@ -11,7 +11,8 @@ while True:
         continue
     else:
         break
-    
+
+
 def get_character_information(character: str) -> json:
     api_url = f"https://gateway.marvel.com:443/v1/public/characters?name={character}&ts=1&apikey={marvel_api_key}"
     try:
@@ -22,6 +23,7 @@ def get_character_information(character: str) -> json:
     except requests.exceptions.RequestException as error:
         print(f"Sorry! Network error: {error}")
         return None
+
 
 def check_character_information(information: json) -> str:
     if information:
@@ -41,7 +43,3 @@ def check_character_information(information: json) -> str:
 
 character_information = get_character_information(character)
 check_character_information(character_information)
-
-#TODO
-# I should make selectable menu for all the items fetched from the api
-
