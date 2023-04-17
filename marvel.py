@@ -10,7 +10,7 @@ def main():
         check_character_information(character_information)
 
 
-def get_character():
+def get_character() -> str:
     while True:
         character = input("Enter a character name: ").strip()
         if character == "":
